@@ -16,7 +16,7 @@ export const deploy = {
     ref: DEPLOY_REF,
     repo: 'https://github.com/DariaPrindina/web-plus-pm2-deploy.git',
     path: DEPLOY_PATH,
-    'pre-deploy': `scp ./*.env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/source/frontend`,
+    'pre-deploy': `scp ./*.env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/frontend`,
     'post-deploy': `cd ${DEPLOY_PATH}/frontend && npm i && npm run build && pm2 restart ecosystem.config.js `,
   },
 };
