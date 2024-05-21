@@ -12,6 +12,7 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: DEPLOY_REPO,
       path: DEPLOY_PATH,
+      'pre-deploy': `scp -o BatchMode=yes -Crv .env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/source/frontend && scp -o BatchMode=yes -Crv .env.deploy ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/source/frontend`,
       'post-deploy': `cd ${DEPLOY_PATH}/source/frontend && npm i && npm run build && pm2 restart ecosystem.config.js `,
     },
   },
