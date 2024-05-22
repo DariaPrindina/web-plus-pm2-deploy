@@ -52,6 +52,9 @@ module.exports = {
       template: './src/index.html' // путь к файлу index.html
     }),
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin() // подключение плагина для объединения файлов
+    new MiniCssExtractPlugin(), // подключение плагина для объединения файлов
+    new HtmlWebpackPlugin({
+      favicon: "./src/images/favicon.ico"
+  })
   ]
 };
