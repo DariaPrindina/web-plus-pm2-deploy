@@ -12,7 +12,8 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: DEPLOY_REPO,
       path: DEPLOY_PATH,
-      'pre-deploy': `npm run build &&  scp -Cr build ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/source/frontend`,
+      'pre-deploy': `scp -i ~/.ssh/id_rsa.pub -Cr build ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/current/frontend`,
+      'post-deploy': 'pm2 restart ecosystem.config.js',
     },
   },
 };
