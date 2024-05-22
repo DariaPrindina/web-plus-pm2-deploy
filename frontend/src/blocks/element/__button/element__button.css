@@ -1,0 +1,18 @@
+.element__button {
+  width: 22px;
+  height: 19px;
+  margin: 0 5px 6px 0;
+  align-self: flex-end;
+  background-image: url(../../../images/like.svg);
+  padding: 0;
+  background-color: transparent;
+  background-size: cover;
+  border: 0;
+  outline: none;
+  transition: opacity .12s linear;
+}
+
+.element__button:hover {
+  opacity: .5;
+  cursor: pointer;
+}
