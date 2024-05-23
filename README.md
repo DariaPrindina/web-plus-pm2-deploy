@@ -4,6 +4,6 @@
 
 **IP адрес** 84.201.166.229
 
-**Frontend** https://mesto.dp.students.nomoredomainswork.ru/
+**Frontend** https://mesto.dp.students.nomoredomainswork.ru
 
-**Backend** https://api.mesto.dp.students.nomoredomainswork.ru/
+**Backend** https://api.mesto.dp.students.nomoredomainswork.ru
