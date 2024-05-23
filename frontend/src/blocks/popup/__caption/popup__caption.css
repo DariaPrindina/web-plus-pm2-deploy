@@ -1,9 +1,12 @@
 .popup__caption {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
   font-size: 12px;
   line-height: 15px;
-  align-self: flex-start;
-  margin: 10px 0 0;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 10px);
+  margin: 0;
+  /*
+    позиционируем абсолютно. В задании сказано только про максимальные размеры изображения.
+  */
 }
