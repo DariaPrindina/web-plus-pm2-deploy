@@ -1,7 +1,7 @@
 import './index.css'
-import { 
+import {
   validationConfig,
-  popupEditProfileOpenButton, 
+  popupEditProfileOpenButton,
   popupAddElementOpenButton,
   profileName,
   profileProfession,
@@ -19,11 +19,7 @@ import { PopupWithImage } from "../components/PopupWithImage.js";
 import { PopupWithConfirmation } from '../components/PopupWithConfirmation';
 
 const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-59',
-  headers: {
-    authorization: '6318b4d3-b21d-4bf6-b1fb-1139aaeed72e',
-    'Content-Type': 'application/json'
-  }
+  baseUrl: 'https://api.mesto.dp.students.nomoredomainswork.ru/',
 });
 
 let userId = '';
@@ -38,7 +34,7 @@ Promise.all([api.getUserInfo(), api.getInitialCards()])
   console.log(`Ошибка 2=> ${err}`);
 });
 
-const userInfo = new UserInfo({ 
+const userInfo = new UserInfo({
   name: profileName,
   profession: profileProfession,
   avatar: avatarImg
@@ -83,7 +79,7 @@ const formPopupEditAvatar = new PopupWithForm(
 formPopupEditAvatar.setEventListeners();
 
 const formPopupAddElement = new PopupWithForm(
-  '.popup_add-element', 
+  '.popup_add-element',
   {formSubmit: (data) => {
     formPopupAddElement.loading(true)
     api.addNewCard(data)
@@ -120,9 +116,9 @@ popupWithConfirmation.setEventListeners();
 const createCard = (data) => {
   const cardNew = new Card ({
     userId: userId,
-    data: data, 
-    templateSelector: '#card-template', 
-    
+    data: data,
+    templateSelector: '#card-template',
+
     handleCardClick: (name, link) => {
       popupWhithImage.open(name, link)
     },
@@ -151,8 +147,8 @@ const createCard = (data) => {
         .catch((err) => {
           console.log(`Ошибка => ${err} => ${err.status}`)
         })
-      } 
-    }  
+      }
+    }
   });
   return cardNew.generateCard();
 }
